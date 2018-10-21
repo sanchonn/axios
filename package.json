@@ -32,6 +32,9 @@
   },
   "homepage": "https://github.com/axios/axios",
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
     "bundlesize": "^0.17.0",
     "coveralls": "^3.0.0",
     "es6-promise": "^4.2.4",
@@ -62,6 +65,7 @@
     "load-grunt-tasks": "^3.5.2",
     "minimist": "^1.2.0",
     "mocha": "^5.2.0",
+    "protobufjs": "^6.8.8",
     "sinon": "^4.5.0",
     "typescript": "^2.8.1",
     "url-search-params": "^0.10.0",

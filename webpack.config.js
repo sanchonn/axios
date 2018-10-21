@@ -12,6 +12,17 @@ function generateConfig(name) {
       library: 'axios',
       libraryTarget: 'umd'
     },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          query: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      ]
+    },
     node: {
       process: false
     },
