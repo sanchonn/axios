@@ -56,14 +56,13 @@ Performing a `GET` request with `Google protocol buffer`
 
 
 Performing a `GET` request
-```Proto
+
 syntax = "proto3";
  
 message Message {
     required string text = 1;
 }
 
-```js
 const axios = require('axios');
 // Make a request to the server and get google protocol buffer response and decode it to the json
 axios.getGbuf('http://localhost:4444/', 'test.proto', 'Message').then((res) => {
