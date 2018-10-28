@@ -11,7 +11,7 @@
 Promise based HTTP client for the browser and node.js
 
 ## Features
-
+- Google [protocol buffers](https://developers.google.com/protocol-buffers/) support added for get, post, delete, put, patch methodes. It transparency codes and decodes to/from google protocol buffer and json.
 - Make [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser
 - Make [http](http://nodejs.org/api/http.html) requests from node.js
 - Supports the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API
@@ -51,9 +51,42 @@ Using cdn:
 
 ## Example
 
+Performing a `GET` request with `Google protocol buffer`
+```js
+
+
 Performing a `GET` request
+```Proto
+syntax = "proto3";
+ 
+message Message {
+    required string text = 1;
+}
 
 ```js
+const axios = require('axios');
+// Make a request to the server and get google protocol buffer response and decode it to the json
+axios.getGbuf('http://localhost:4444/', 'test.proto', 'Message').then((res) => {
+      // Print response to the console
+      console.log(res);
+    }).catch((err) => {
+      console.log(err);
+    });
+
+// Json payload
+const sample = {
+      text: 'test'
+    };
+
+// Make a post request to the server with sample payload and get response from the server
+// postGbuf transparency codes and decodes from google protocol buffer to/from json
+axios.postGbuf('http://localhost:4444/', sample, 'test.proto', 'Message').then((res) => {
+  console.log(res);
+}).catch((err) => {
+  console.log(err);
+});
+
+
 const axios = require('axios');
 
 // Make a request for a user with a given ID
