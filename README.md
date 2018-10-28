@@ -11,7 +11,7 @@
 Promise based HTTP client for the browser and node.js
 
 ## Features
-- Google [protocol buffers](https://developers.google.com/protocol-buffers/) support added for get, post, delete, put, patch methodes. It transparency codes and decodes to/from google protocol buffer and json.
+- Google [protocol buffers](https://developers.google.com/protocol-buffers/) support added for get, post, delete, put, patch methodes. It transparency codes and decodes json to/from google protocol buffer. Feature can be use from node.js and browser.
 - Make [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser
 - Make [http](http://nodejs.org/api/http.html) requests from node.js
 - Supports the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API
