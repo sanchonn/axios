@@ -69,6 +69,7 @@ axios.getGbuf('http://localhost:4444/', 'test.proto', 'Message').then((res) => {
       // Print response to the console
       console.log(res);
     }).catch((err) => {
+      // handle error
       console.log(err);
     });
 
@@ -80,8 +81,19 @@ const sample = {
 // Make a post request to the server with sample payload and get response from the server
 // postGbuf transparency codes and decodes from google protocol buffer to/from json
 axios.postGbuf('http://localhost:4444/', sample, 'test.proto', 'Message').then((res) => {
+  // handle success
   console.log(res);
 }).catch((err) => {
+  // handle error
+  console.log(err);
+});
+
+// And commonly you can user requstGbug
+axios.requestGbuf('http://localhost:4444/', 'put', sample, 'test.proto', 'Message').then((res) => {
+  // handle success
+  console.log(res);
+}).catch((err) => {
+  // handle error
   console.log(err);
 });
 
@@ -101,6 +113,7 @@ axios.get('/user?ID=12345')
   .then(function () {
     // always executed
   });
+
 
 // Optionally the request above could also be done as
 axios.get('/user', {
